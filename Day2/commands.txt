@@ -1,0 +1,643 @@
+ 1358  cd ChennaiDec2018/
+ 1359  ls
+ 1360  clear
+ 1361  mkdir Day1
+ 1362  cd Day1
+ 1363  docker --version
+ 1364  ifconfig
+ 1365  clear
+ 1366  apt update
+ 1367  ifconfig
+ 1368  clear
+ 1369  ifconfig ens33
+ 1370  ifconfig
+ 1371  clear
+ 1372  vim /etc/apt/sources.list
+ 1373  clear
+ 1374  ls
+ 1375  clear
+ 1376  docker --version
+ 1377  clear
+ 1378  docker --version
+ 1379  clear
+ 1380  docker images
+ 1381  docker rmi ubuntu
+ 1382  docker rmi ubuntu:16.04
+ 1383  docker images
+ 1384  docker rmi tektutor/jenkins-slave
+ 1385  docker rm -f $(docker ps -aq)
+ 1386  clear
+ 1387  docker rmi tektutor/jenkins-slave
+ 1388  clear
+ 1389  docker images
+ 1390  docker rmi mysql
+ 1391  clear
+ 1392  docker images
+ 1393  docker run -it ubuntu /bin/bash
+ 1394  clar
+ 1395  clear
+ 1396  docker images
+ 1397  ifconfig
+ 1398  docker run -it ubuntu /bin/bash
+ 1399  clear
+ 1400  docker images
+ 1401  clear
+ 1402  docker run -it centos bash
+ 1403  docker images
+ 1404  clear
+ 1405  docker image inspect centos
+ 1406  docker image inspect ubuntu
+ 1407  clear
+ 1408  docker info
+ 1409  clear
+ 1410  cd /var/lib/docker
+ 1411  ls
+ 1412  cd image/
+ 1413  ls
+ 1414  cd aufs/
+ 1415  ls
+ 1416  cd imagedb/
+ 1417  ls
+ 1418  cd content/
+ 1419  ls
+ 1420  cd sha256/
+ 1421  ls
+ 1422  docker images
+ 1423  vim 75835a67d1341bdc7f4cc4ed9fa1631a7d7b6998e9327272afea342d90c4ab6d 
+ 1424  docker image inspect ubuntu
+ 1425  :q
+ 1426  clear
+ 1427  ls
+ 1428  cat 75835a67d1341bdc7f4cc4ed9fa1631a7d7b6998e9327272afea342d90c4ab6d 
+ 1429  cd ..
+ 1430  ls
+ 1431  cd ..
+ 1432  ls
+ 1433  cd layerdb/
+ 1434  clear
+ 1435  ls
+ 1436  cd sha256/
+ 1437  ls
+ 1438  cd 1c8cd755b52d6656df927bc8716ee0905853fada7ca200e4e6954bd010e792bb/
+ 1439  ls
+ 1440  cat size 
+ 1441  cd ..
+ 1442  ls
+ 1443  cd 32f84095aed5a2e947b12a3813f019fc69f159cb5c7eae5dad69b2d98ffbeca4/
+ 1444  ls
+ 1445  clear
+ 1446  cd /root/Training/
+ 1447  ls
+ 1448  cd ChennaiDec2018/
+ 1449  clear
+ 1450  ls
+ 1451  cd Day1
+ 1452  lks
+ 1453  clear
+ 1454  docker images
+ 1455  docker ps
+ 1456  docker ps -a
+ 1457  clear
+ 1458  docker ps
+ 1459  docker ps -a
+ 1460  docker images
+ 1461  docker inspect 6734f8242a2d
+ 1462  clear
+ 1463  docker ps -a
+ 1464  docker rename keen_wing server1
+ 1465  docker ps
+ 1466  docker ps -a
+ 1467  docker rm 6734f8242a2d 262242e688f8 54186c294d85
+ 1468  clear
+ 1469  docker ps -=a
+ 1470  docker ps -a
+ 1471  docker run hello-world
+ 1472  clear
+ 1473  docker ps
+ 1474  docker ps -a
+ 1475  cd /var/lib/docker
+ 1476  ls
+ 1477  cd containers/
+ 1478  ls
+ 1479  cd 407ba0f8564a2c0eb9759ad47de3671cb63be7a4a30b5b12604a47d13acec1c8/
+ 1480  ls
+ 1481  vim hosts
+ 1482  clear
+ 1483  ls
+ 1484  cat hostname 
+ 1485  ls
+ 1486  vim config.v2.json 
+ 1487  clear
+ 1488  ls
+ 1489  exit
+ 1490  clear
+ 1491  cp /root/Training/ChennaiDec2018/Day2/ubuntu-ansible/Dockerfile /
+ 1492  clar
+ 1493  clear
+ 1494  cd /
+ 1495  ls
+ 1496  docker build -t test .
+ 1497  ssh jegan@localhost
+ 1498  vim /root/.ssh/known_hosts 
+ 1499  clear
+ 1500  docker ps
+ 1501  docker run -it --name ubuntu1 --hostname ubuntu1 ubuntu /bin/bash
+ 1502  clear
+ 1503  docker images
+ 1504  docker rmi hello-world
+ 1505  docker ps
+ 1506  docker ps -a
+ 1507  docker start ubuntu1
+ 1508  docker ps
+ 1509  clear
+ 1510  docker exec -it ubuntu1 bash
+ 1511  docker ps
+ 1512  docker run -it --name ubuntu2 --hostname ubuntu2 ubuntu bash
+ 1513  docker ps
+ 1514  docker ps -a
+ 1515  clear
+ 1516  docker start ubuntu2
+ 1517  docker ps
+ 1518  docker exec -it ubuntu2 bash
+ 1519  docker ps
+ 1520  docker exec -it ubuntu1 bash
+ 1521  docker ps
+ 1522  clear
+ 1523  docker images
+ 1524  docker commit 
+ 1525  commit ubuntu1 ubuntu_with_vim
+ 1526  docker commit ubuntu1 ubuntu_with_vim
+ 1527  docker images
+ 1528  clear
+ 1529  ls
+ 1530  docker ps
+ 1531  docker inspect ubuntu1
+ 1532  clear
+ 1533  ifconfig
+ 1534  clear
+ 1535  docker inspect ubuntu1 | grep IPA
+ 1536  docker inspect ubuntu2 | grep IPA
+ 1537  ping 172.17.0.2
+ 1538  ping 172.17.0.3
+ 1539  clear
+ 1540  set -o vi
+ 1541  docker run -it --name ubuntu3 --hostname ubuntu3 ubuntu bash
+ 1542  clear
+ 1543  docker run -dit  ubuntu bash
+ 1544  clear
+ 1545  docker ps
+ 1546  clear
+ 1547  docker ps
+ 1548  clear
+ 1549  docker ps -a
+ 1550  clear
+ 1551  docker ps -q
+ 1552  clear
+ 1553  docker ps -q | wc -l
+ 1554  clear
+ 1555  docker ps 
+ 1556  clear
+ 1557  docker ps -q
+ 1558  clear
+ 1559  docker rm -f $(docker ps -aq)
+ 1560  clear
+ 1561  docker ps
+ 1562  docker ps -a
+ 1563  history
+ 1564  clsER
+ 1565  clear
+ 1566  docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu bash
+ 1567  docker run -dit --name ubuntu2 --hostname ubuntu2 ubuntu bash
+ 1568  docker ps
+ 1569  docker rmi ubuntu
+ 1570  docker rm -f 9
+ 1571  docker rmi ubuntu
+ 1572  docker rm -f 4
+ 1573  docker rmi ubuntu
+ 1574  clear
+ 1575  docker images
+ 1576  docker rmi ubuntu_with_vim
+ 1577  clear
+ 1578  docker images
+ 1579  docker run -d --name nginx1 nginx 
+ 1580  docker ps
+ 1581  docker inspect nginx1 | grep IPA
+ 1582  curl http://172.17.0.2
+ 1583  apt install curl
+ 1584  curl http://172.17.0.2
+ 1585  clear
+ 1586  docker inspect nginx1 | grep IPA
+ 1587  docker network ls
+ 1588  docker inspect bridge
+ 1589  clear
+ 1590  ls
+ 1591  docker ps
+ 1592  docker run -dit ---name nginx1 --hostname nginx1 -p 8080:80 nginx 
+ 1593  docker run -dit --name nginx1 --hostname nginx1 -p 8080:80 nginx 
+ 1594  docker rm $(docker rm -aq)
+ 1595  clear
+ 1596  dockerm rm $(docker ps -q)
+ 1597  docker rm $(docker ps -q)
+ 1598  docker rm $(docker ps -aq)
+ 1599  docker ps
+ 1600  docker rm -f $(docker ps -aq)
+ 1601  docker ps
+ 1602  clear
+ 1603  docker run -dit --name nginx1 --hostname nginx1 -p 8080:80 nginx 
+ 1604  docker ps
+ 1605  curl http://localhost:8080
+ 1606  clear
+ 1607  ifconfig ens33
+ 1608  docker inspect nginx1 | grep IPA
+ 1609  history 10
+ 1610  clear
+ 1611  docker run -dit --name nginx2 --hostname nginx2 -p 8081:80 nginx 
+ 1612  docker run -dit --name nginx2 --hostname nginx2 -p 8082:80 nginx 
+ 1613  dlcer
+ 1614  clear
+ 1615  docker ps
+ 1616  docker run -dit --name nginx4 --hostname nginx4 -p 8081:80 nginx 
+ 1617  docker run -dit --name nginx5 --hostname nginx1 -p 8085:80 nginx 
+ 1618  docker ps
+ 1619  clear
+ 1620  docker exec -it nginx5 bash
+ 1621  docker exec -it nginx1 bash
+ 1622  docker ps
+ 1623  history 100
+ 1624  clear
+ 1625  vagrant
+ 1626  apt install vagrant
+ 1627  clear
+ 1628  virtualbox
+ 1629  apt install virtualbox-qt
+ 1630  clear
+ 1631  virtualbox
+ 1632  ls
+ 1633  cd Training/Day1
+ 1634  ls
+ 1635  cd ..
+ 1636  ls
+ 1637  cd ChennaiDec2018/
+ 1638  ls
+ 1639  cd Day1
+ 1640  ls
+ 1641  clear
+ 1642  ls
+ 1643  vagrant init
+ 1644  ls
+ 1645  vim Vagrantfile 
+ 1646  virtualbox &
+ 1647  vagrant up
+ 1648  vim Vagrantfile 
+ 1649  vagrant up
+ 1650  clear
+ 1651  vagrant halt
+ 1652  vagrant destroy
+ 1653  clear
+ 1654  ls
+ 1655  docker ps
+ 1656  docker exec -it nginx1 sh
+ 1657  clear
+ 1658  docker stop nginx1
+ 1659  dovker ps
+ 1660  docker ps
+ 1661  docker start nginx1
+ 1662  docker exec -it nginx1 sh
+ 1663  docker rm -f $(docker ps -aq)
+ 1664  docker ps
+ 1665  clear
+ 1666  docker ps
+ 1667  mkdir Data
+ 1668  cd Data
+ 1669  echo "My application data" > file.txt
+ 1670  ls
+ 1671  cd ..
+ 1672  ls
+ 1673  docker run -d --name nginx1 --hostname nginx1 -v /root/Training/ChennaiDec2018/Day1/Data:/root/AppData nginx 
+ 1674  docker ps
+ 1675  docker inspect nginx1
+ 1676  clear
+ 1677  docker exec -it nginx1 sh
+ 1678  docker rm -f nginx1
+ 1679  clear
+ 1680  ls
+ 1681  cd Data
+ 1682  ls
+ 1683  cat file.txt 
+ 1684  docker volume
+ 1685  clear
+ 1686  ls
+ 1687  docker ps
+ 1688  docker images
+ 1689  docker pull mysql
+ 1690  clear
+ 1691  docker images
+ 1692  docker ps
+ 1693  docker pull mysql:5.6
+ 1694  docker images
+ 1695  clear
+ 1696  docker images
+ 1697  docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.6
+ 1698  docker ps
+ 1699  mysql -u root -p
+ 1700  clear
+ 1701  ls
+ 1702  docker ps
+ 1703  docker exec -it some-mysql 
+ 1704  docker exec -it some-mysql bash
+ 1705  clear
+ 1706  ls
+ 1707  docker run --name some-wordpress --link some-mysql:mysql -p 9080:80 -d wordpress
+ 1708  clear
+ 1709  docker ps
+ 1710  docker stop some-mysql
+ 1711  docker ps
+ 1712  docker start some-mysql
+ 1713  clear
+ 1714  history
+ 1715  clear
+ 1716  ls
+ 1717  clear
+ 1718  ls
+ 1719  cd ..
+ 1720  ls
+ 1721  clear
+ 1722  docker rm -f $(docker ps -aq)
+ 1723  docker network ls
+ 1724  docker network create my-network-1
+ 1725  docker network ls
+ 1726  docker network inspect my-network-1 
+ 1727  clear
+ 1728  docker network inspect my-network-2 
+ 1729  docker network create my-network-2
+ 1730  docker network inspect my-network-2 
+ 1731  clear
+ 1732  docker network ls
+ 1733  docker run -dit --name c1 --network=my-network-1 ubuntu bash
+ 1734  docker ps
+ 1735  clear
+ 1736  docker inspect c1 | grep IA
+ 1737  docker inspect c1 | grep IPA
+ 1738  docker inspect -f {{.NetworkSettings.IPAddress}} c1
+ 1739  docker inspect -f {{ .NetworkSettings.IPAddress }} c1
+ 1740  docker inspect -f {{.NetworkSettings.IPAddress}} c1
+ 1741  docker inspect c1
+ 1742  docker inspect -f {{.NetworkSettings.Networks.my-network-1.IPAddress}} c1
+ 1743  clear
+ 1744  docker inspect c1 | grep IPA
+ 1745  docker run -dit --name c2 --network=my-network-2 ubuntu bash
+ 1746  docker ps
+ 1747  docker inspect c2 | grep IPA
+ 1748  docker exec -it c1  bash
+ 1749  docker exec -it c2 bash
+ 1750  docker network
+ 1751  clear
+ 1752  docker connect
+ 1753  docker network connect
+ 1754  docker network connect my-network-2 c1
+ 1755  docker inspect c1 | grep IPA
+ 1756  clear
+ 1757  docker network inspect my-network-2
+ 1758  clear
+ 1759  docker exec -it c1 bash
+ 1760  docker exec -it c2 bash
+ 1761  clear
+ 1762  history
+ 1763  clear
+ 1764  vim Dockerfile
+ 1765  clear
+ 1766  ls
+ 1767  vim Dockerfile 
+ 1768  docker build -t ubuntu-with-vim-and-tree .
+ 1769  clear
+ 1770  docker images
+ 1771  clear
+ 1772  docker run -dit ubuntu-with-vim-and-tree /bin/bash
+ 1773  docker ps
+ 1774  docker exec -it jovial_euclid bash
+ 1775  ls
+ 1776  vim Dockerfile 
+ 1777  clear
+ 1778  docker --version
+ 1779  docker info
+ 1780  clear
+ 1781  ps -aux | grep dockerd
+ 1782  docker images
+ 1783  clear
+ 1784  docker ps
+ 1785  docker ps -a
+ 1786  clear
+ 1787  docker ps -q
+ 1788  docker ps -aq
+ 1789  docker stop a3
+ 1790  docker stop a3 46 90
+ 1791  docker start a3 46 90
+ 1792  docker ps
+ 1793  clear
+ 1794  docker rm -f $(docker ps -aq)
+ 1795  set -o vi
+ 1796  docker inspect a3 | grep IPA
+ 1797  clear
+ 1798  docker ps -a
+ 1799  docker run -dit ubuntu-with-vim-and-tree /bin/bash
+ 1800  docker ps
+ 1801  docker inspect kind_blackwell | grep IPA
+ 1802  docker inspect -f {{.NetworkSettings.IPAddress}} kind_blackwell
+ 1803  clear
+ 1804  docker inspect kind_blackwell 
+ 1805  docker inspect -f {{.NetworkSettings.Networks.bridge.EndpointID}} kind_blackwell
+ 1806  clear
+ 1807  vim Dockerfile 
+ 1808  cd ..
+ 1809  ls
+ 1810  mkdir Day2
+ 1811  cd Day2
+ 1812  clear
+ 1813  ls
+ 1814  git clone https://github.com/tektutor/ubuntu-ansible.git
+ 1815  ls
+ 1816  cd ubuntu-ansible/
+ 1817  ls
+ 1818  vim Dockerfile 
+ 1819  vim /etc/ssh/ssh_config 
+ 1820  vim Dockerfile 
+ 1821  vim /etc/ssh/ssh_config 
+ 1822  vim /etc/ssh/sshd_config 
+ 1823  clear
+ 1824  apt install openssh-server
+ 1825  clear
+ 1826  vim /etc/ssh/sshd_config 
+ 1827  service ssh start
+ 1828  clear
+ 1829  ls
+ 1830  vim Dockerfile 
+ 1831  service ssh stop
+ 1832  /usr/sbin/sshd -D
+ 1833  ps aux | grep -i sshd
+ 1834  vim Dockerfile 
+ 1835  docker run ubuntu
+ 1836  docker ps
+ 1837  docker ps -a
+ 1838  clear
+ 1839  ls
+ 1840  vi 
+ 1841  sshkey-gen
+ 1842  clear
+ 1843  cat /root/.ssh/id_rsa
+ 1844  ls
+ 1845  cat /root/.ssh/id_rsa.pub 
+ 1846  sshkey-gen
+ 1847  ssh-keygen
+ 1848  clear
+ 1849  cmp /root/.ssh/id_rsa /root/.ssh/id_rsa1
+ 1850  cd /rot/.ssh
+ 1851  ls
+ 1852  cd /root/.ssh
+ 1853  clear
+ 1854  ls
+ 1855  mkdir bak
+ 1856  cp id* bak
+ 1857  ls
+ 1858  ssh-keygen
+ 1859  ls
+ 1860  clear
+ 1861  ls
+ 1862  diff bak/id_rsa id_rsa
+ 1863  clear
+ 1864  cd -
+ 1865  clear
+ 1866  ls
+ 1867  cd -
+ 1868  ls
+ 1869  clear
+ 1870  ls
+ 1871  cp /root/.ssh/id_rsa.pub authorized_keys
+ 1872  ls
+ 1873  rm id*
+ 1874  clear
+ 1875  ls
+ 1876  docker build -t tektutor/ansible-ubuntu .
+ 1877  clear
+ 1878  docker images
+ 1879  vim Dockerfile 
+ 1880  clear
+ 1881  docker images
+ 1882  celar
+ 1883  clear
+ 1884  cd ..
+ 1885  ls
+ 1886  docker run -d --name ubuntu1 --hostname ubuntu1 -p 8001:80 -p 2001:22 tektutor/ansible-ubuntu
+ 1887  docker ps
+ 1888  docker run -dit --name ubuntu2 --hostname ubuntu2 -p 8002:80 -p 2002:22 tektutor/ansible-ubuntu /bin/bash
+ 1889  docker ps
+ 1890  docker rm -f ubuntu2
+ 1891  clear
+ 1892  docker ps
+ 1893  docker rm -f kind_blackwell 
+ 1894  clear
+ 1895  docker ps
+ 1896  ssh -p 2001 root@localhost
+ 1897  clear
+ 1898  echo "" > /root/.ssh/known_hosts 
+ 1899  ssh -p 2001 root@localhost
+ 1900  clear
+ 1901  ssh -p 2001 root@localhost
+ 1902  clear
+ 1903  ls
+ 1904  history
+ 1905  clear
+ 1906  history
+ 1907  clear
+ 1908  docker images
+ 1909  clear
+ 1910  ls
+ 1911  vim hosts
+ 1912  ls
+ 1913  vim hosts 
+ 1914  clear
+ 1915  ls
+ 1916  ansible -i hosts all -m ping
+ 1917  apt install ansible
+ 1918  clear
+ 1919  ansible --version
+ 1920  apt-add-repository --yes --update ppa:ansible/ansible
+ 1921  apt remove ansible
+ 1922  clear
+ 1923  apt update && apt install -y ansible
+ 1924  clear
+ 1925  ansible --version
+ 1926  cd /usr/lib/python2.7/dist-packages/ansible
+ 1927  ls
+ 1928  cd module
+ 1929  cd modules
+ 1930  clear
+ 1931  ls
+ 1932  vim .
+ 1933  clear
+ 1934  ansible --version
+ 1935  ls
+ 1936  cd system/
+ 1937  ls
+ 1938  vim ping.pyc
+ 1939  clear
+ 1940  ls
+ 1941  clear
+ 1942  cd /root
+ 1943  ansible-doc -l
+ 1944  clear
+ 1945  ansible-doc ping
+ 1946  clear
+ 1947  ansible-doc -l ec*
+ 1948  clear
+ 1949  ansible-doc -l | grep ec2
+ 1950  clear
+ 1951  ansible-doc -l | grep ping
+ 1952  set -o vi
+ 1953  cd system/
+ 1954  ansible --version
+ 1955  clear
+ 1956  cd /usr/lib/python2.7/dist-packages/ansible
+ 1957  ls
+ 1958  cd sys
+ 1959  cd modules/system/
+ 1960  vim ping.py
+ 1961  clear
+ 1962  cd ..
+ 1963  cd system/
+ 1964  ls
+ 1965  vim ping.py
+ 1966  clear
+ 1967  cd /root/Training/
+ 1968  ls
+ 1969  cd ChennaiDec2018/
+ 1970  ls
+ 1971  cd Day2
+ 1972  ls
+ 1973  cd ubuntu-ansible/
+ 1974  ls
+ 1975  cd ..
+ 1976  ls
+ 1977  vim hosts 
+ 1978  clear
+ 1979  ansible -i hosts test -m ping
+ 1980  ansible -i hosts adsfsd -m ping
+ 1981  ansible -i hosts all -m ping
+ 1982  vim hosts 
+ 1983  clear
+ 1984  ansible -i hosts all -m ping
+ 1985  vim hosts 
+ 1986  ansible -i hosts prod_servers -m ping
+ 1987  cat hosts 
+ 1988  clear
+ 1989  docker run -d --name ubuntu2 --hostname ubuntu2 -p 8002:80 -p 2002:22 tektutor/ansible-ubuntu 
+ 1990  docker run -d --name ubuntu3 --hostname ubuntu3 -p 8003:80 -p 2003:22 tektutor/ansible-ubuntu 
+ 1991  docker ps
+ 1992  vim hosts 
+ 1993  clear
+ 1994  docker ps
+ 1995  clear
+ 1996  ls
+ 1997  rm /Dockerfile 
+ 1998  ls
+ 1999  history
+ 2000  history > commands.txt
