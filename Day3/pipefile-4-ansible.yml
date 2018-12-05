@@ -1,0 +1,13 @@
+- name: Ansible pipeline demo
+  hosts: localhost
+  pre_tasks:
+    - name: Build ansible docker images
+      shell: ansible-playbook build-docker-image.yml
+
+  tasks:
+    - name: Provision containers
+      shell: ansible-playbook provision-containers.yml
+
+  post_tasks:
+    - name: Install nginx web server
+      shell: ansible-playbook install-nginx-refactor-1.yml 

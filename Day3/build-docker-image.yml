@@ -1,0 +1,18 @@
+- name: Build customer ansible docker images
+  hosts: localhost
+  tasks:
+     - name: Build Ubuntu docker image
+       docker_image:
+          name: "tektutor/ansible-ubuntu"
+          dockerfile: UbuntuDockerfile
+          state: build
+          path: "."
+
+     - name: Build CentOS docker image
+       docker_image:
+          name: "tektutor/ansible-centos"
+          dockerfile: CentOSDockerfile
+          state: build
+          path: "."
+
+
