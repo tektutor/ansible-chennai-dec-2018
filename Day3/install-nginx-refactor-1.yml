@@ -1,0 +1,59 @@
+- name: Install, Configure and deploy web page in nginx web server in Ubuntu
+  hosts: ubuntu 
+  vars_files: 
+    - my_conf_file.yml
+  tasks:
+   - name: Install nginx web server in Ubuntu
+     apt: name=nginx state=latest update_cache=yes 
+
+   - name: Configure nginx web server document root folder in Ubuntu
+     copy: src=default dest=/etc/nginx/sites-available/default
+
+   - name: Create the nginx document root folder
+     file: path=/var/html state=directory mode=0777
+
+   - name: Restart the nginx web server
+     shell: service nginx restart
+
+   - name: Deploy web page 
+     template: src=index.html.j2 dest=/var/html/index.html
+
+- name: Install, configure and deploy web page in CentOS
+  hosts: centos
+  vars_files: 
+    - my_conf_file.yml
+  tasks:
+   - name: Install epel-release  in CentOS 
+     yum: name=epel-release state=latest 
+
+   - name: Install nginx web server in CentOS 
+     yum: name=nginx state=latest 
+
+   - name: Configure nginx web server document root folder in CentOS 
+     copy: src=default.conf dest=/etc/nginx/conf.d/default.conf
+
+   - name: Create the nginx document root folder in CentOS
+     file: path=/var/html state=directory mode=0777
+
+   - name: Restart the nginx web server in CentOS
+     shell: service nginx restart
+
+   - name: Deploy web page in CentOS
+     template: src=index.html.j2 dest=/var/html/index.html
+
+- name: Test and see if nginx server is up and running
+  hosts: localhost
+  tasks:
+    - name: Access our customized web page in Ubuntu
+      shell: curl "http://localhost:{{item}}"
+      with_sequence: start=8001 end=8003 
+      register: output
+
+    - debug: var=output
+
+    - name: Access our customized web page in CentOS
+      shell: curl "http://localhost:{{item}}"
+      with_sequence: start=9001 end=9003 
+      register: output
+
+    - debug: var=output

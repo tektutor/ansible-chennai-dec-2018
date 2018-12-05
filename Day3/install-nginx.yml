@@ -1,0 +1,58 @@
+- name: Install, Configure and deploy web page in nginx web server
+  hosts: all
+  vars: 
+   - greeting_msg: DevOps 
+   - provisioner_tool: Docker
+   - cm_tool: Ansible
+  tasks:
+   - name: Install nginx web server in Ubuntu
+     when: ( ansible_distribution == "Ubuntu" and ansible_os_family == "Debian" )
+     apt: name=nginx state=latest update_cache=yes 
+
+   - name: Install epel-release  in CentOS 
+     when: ( ansible_distribution == "CentOS" and ansible_os_family == "RedHat" )
+     yum: name=epel-release state=latest 
+
+   - name: Install nginx web server in CentOS 
+     when: ( ansible_distribution == "CentOS" and ansible_os_family == "RedHat" )
+     yum: name=nginx state=latest 
+
+   - name: Configure nginx web server document root folder in Ubuntu
+     when: ( ansible_distribution == "Ubuntu" and ansible_os_family == "Debian" )
+     copy: src=default dest=/etc/nginx/sites-available/default
+
+   - name: Create the nginx document root folder
+     file: path=/var/html state=directory mode=0777
+
+   - name: Restart the nginx web server
+     shell: service nginx restart
+
+   - name: Deploy web page 
+     template: src=index.html.j2 dest=/var/html/index.html
+
+- name: Test and see if nginx server is up and running
+  hosts: localhost
+  tasks:
+    - name: Access our customized web page in Ubuntu
+      shell: curl "http://localhost:{{item}}"
+      with_sequence: start=8001 end=8003 
+      register: output
+
+    - debug: var=output
+
+    - name: Access our customized web page in CentOS 
+      shell: curl "http://localhost:{{item}}"
+      with_sequence: start=9001 end=9003 
+      register: output
+
+    - debug: var=output
+
+
+
+
+
+
+
+
+
+
