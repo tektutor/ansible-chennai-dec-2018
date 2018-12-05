@@ -4,12 +4,10 @@ ubuntu2 ansible_port=2002 ansible_user=root ansible_host=localhost ansible_priva
 ubuntu3 ansible_port=2003 ansible_user=root ansible_host=localhost ansible_private_key_file=/root/.ssh/id_rsa
 
 [dev_servers]
-ubuntu1
-ubuntu2
+ubuntu[1:2]
 
 [qa_servers]
-ubuntu2
-ubuntu3
+ubuntu[2:3]
 
 [prod_servers]
 ubuntu3

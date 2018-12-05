@@ -1,0 +1,24 @@
+- name: Install, Configure and Deploy web page in nginx web server
+  hosts: all
+  vars:
+    - greeting_msg: DevOps
+    - cm_tool: Ansible
+    - provisioner_tool: Docker
+  tasks:
+    - name: Install nginx web server 
+      apt: name=nginx state=latest update_cache=yes
+
+    - name: Start nginx web server 
+      shell: service nginx start 
+
+    - name: Configure nginx web server's document root older 
+      copy: src=default dest=/etc/nginx/sites-available/default backup=yes
+
+    - name: Create the nginx Document root folder
+      shell: mkdir -p /var/html
+
+    - name: Restart nginx web server 
+      shell: service nginx restart 
+
+    - name: Deploy our custom home page inside nginx web server
+      template: src=index.html.j2 dest=/var/html/index.html 
