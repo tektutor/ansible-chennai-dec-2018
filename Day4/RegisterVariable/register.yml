@@ -1,0 +1,27 @@
+- name: Demonstrates advanced use-cases of register variable
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    shell_command_succeeded: False
+    shell_command_failed : False
+  
+  tasks:
+    - name: Let's execute a valid shell command
+      shell: ls -l /
+      register: output
+      ignore_errors: true
+
+    - debug: var=output
+
+    - set_fact:
+         shell_command_succeeded: "{{ True if output.rc == 0 else False }}"
+         shell_command_failed: "{{ True if output.rc != 0 else False }}"
+
+    - debug: msg="This will be printed only if the first task was successful."
+      #when: output.rc == 0
+      when: shell_command_succeeded
+
+    - debug: msg="This will be printed only if the first task has failed."
+      #when: output.rc != 0
+      when: shell_command_failed

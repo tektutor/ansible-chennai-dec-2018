@@ -1,0 +1,11 @@
+- name: Demonstrates handlers and notifiers
+  hosts: ubuntu 
+  tasks:
+    - name: Install nginx 
+      apt: name=nginx state=latest update_cache=yes
+      notify:
+        - Restart nginx web server
+
+  handlers:
+    - name: Restart nginx web server
+      command: service nginx restart

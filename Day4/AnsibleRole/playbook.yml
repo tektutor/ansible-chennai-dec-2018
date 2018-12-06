@@ -1,0 +1,4 @@
+- name: Invoke the custom ansible apache role
+  hosts: all
+  roles:
+    - apache

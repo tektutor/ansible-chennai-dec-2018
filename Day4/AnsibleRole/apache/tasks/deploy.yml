@@ -1,0 +1,13 @@
+---
+
+- name: Deploy web page in apache web server
+  template: src=index.html.j2 dest=/var/html/index.html
+
+- name: Restart apache web server in Ubuntu 
+  when: ansible_distribution == "Ubuntu"
+  command: service apache2 start
+
+- name: Restart apache web server in CentOS 
+  when: ansible_distribution == "CentOS"
+  command: service httpd start
+...

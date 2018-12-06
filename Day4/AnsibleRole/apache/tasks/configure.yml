@@ -1,0 +1,30 @@
+---
+- name: Configure apache Document root folder in Ubuntu
+  when: ansible_distribution == "Ubuntu"
+  copy: src=000-default.conf dest=/etc/apache2/sites-available/000-default.conf
+  notify:
+     - Restart apache server in Ubuntu
+
+- name: Create Document root folder in Ubuntu
+  file: path=/var/html state=directory mode=0777
+  notify:
+     - Restart apache server in Ubuntu
+
+- name: Configure apache port in Ubuntu
+  when: ansible_distribution == "Ubuntu"
+  copy: src=ports.conf dest=/etc/apache2/ports.conf
+  notify:
+     - Restart apache server in Ubuntu
+
+- name: Create Document root folder in CentOS 
+  when: ansible_distribution == "CentOS"
+  file: path=/var/html state=directory mode=0777
+  notify:
+     - Restart apache server in CentOS
+
+- name: Configure apache Document root folder and port in CentOS
+  when: ansible_distribution == "CentOS"
+  copy: src=httpd.conf dest=/etc/httpd/conf/httpd.conf
+  notify:
+     - Restart apache server in CentOS
+...
