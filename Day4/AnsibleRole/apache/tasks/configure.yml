@@ -16,6 +16,12 @@
   notify:
      - Restart apache server in Ubuntu
 
+- name: Grant permissions to document root folder in Ubuntu
+  when: ansible_distribution == "Ubuntu"
+  copy: src=apache2.conf dest=/etc/apache2/apache2.conf
+  notify:
+     - Restart apache server in Ubuntu
+
 - name: Create Document root folder in CentOS 
   when: ansible_distribution == "CentOS"
   file: path=/var/html state=directory mode=0777
