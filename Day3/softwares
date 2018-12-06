@@ -1,0 +1,6 @@
+software_tools:
+  - vim
+  - tree
+  - default-jdk
+  - maven
+       

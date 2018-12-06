@@ -1,0 +1,17 @@
+- name: Create bunch of folders with list variable
+  hosts: localhost
+  vars:
+    - folders:
+        - /tmp/folder1
+        - /tmp/folder2
+        - /tmp/folder3
+  vars_files:
+     - softwares
+  tasks:
+    - name: Create the directory
+      file: path="{{item}}" state=directory mode=0777
+      with_items: "{{folders}}"
+
+    - name: Loop through the software tools list variable
+      debug: msg="{{item}}"
+      with_items: "{{software_tools}}"

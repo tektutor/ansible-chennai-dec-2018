@@ -1,0 +1,12 @@
+- name: Demostrates dictionary variable
+  hosts: localhost
+  vars:
+    environments:
+       JAVA_HOME: "/usr/lib/java/jdk_1.8.0"
+       M2_HOME: "/usr/share/maven"
+       PATH: "$PATH:$JAVA_HOME/bin:$M2_HOME/bin"
+
+  tasks:
+    - name: Navigate through the dictionary items
+      debug: msg="{{item.key}} ===> {{item.value}}"
+      with_dict: "{{environments}}"
