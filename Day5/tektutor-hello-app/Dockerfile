@@ -1,9 +1,10 @@
 FROM ubuntu:16.04
 MAINTAINER Jeganathan Swaminathan <jegan@tektutor.org>
 
+RUN apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/* && apt-get clean
+
 RUN apt-get update && apt-get install -y openssh-server python-minimal 
 RUN apt-get update && apt-get install -y openjdk-8-jdk-headless maven git
-RUN apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd
 
