@@ -1,0 +1,9 @@
+- name: Build image
+  hosts: localhost
+  tasks:
+     - name: Build Jenkins slave docker image
+       docker_image:
+          name: "tektutor/jenkins-slave"
+          dockerfile: Dockerfile
+          state: build
+          path: "."
