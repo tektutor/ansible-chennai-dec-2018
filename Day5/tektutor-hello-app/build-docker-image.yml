@@ -6,6 +6,9 @@
 
 #     - name: Install docker-py python module
 #       shell: pip install docker-py
+     - name: Remove all exiting containers
+       shell: docker rm -f $(docker ps -aq)
+
      - name: Delete existing docker image
        shell: docker rmi tektutor/jenkins-slave
 
