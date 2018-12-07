@@ -1,11 +1,11 @@
 - name: Build image
   hosts: localhost
   tasks:
-     - name: Install python-pip
-       apt: name=python-pip state=present update_cache=yes
+#     - name: Install python-pip
+#       apt: name=python-pip state=present update_cache=yes
 
-     - name: Install docker-py python module
-       shell: pip install docker-py
+#     - name: Install docker-py python module
+#       shell: pip install docker-py
 
      - name: Build Jenkins slave docker image
        docker_image:
